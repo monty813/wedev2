@@ -14,9 +14,10 @@ def about():
 @app.route('/submit', methods=["POST"]) 
 
 def submit(): 
-    username = request.form['username'] 
-    message = request.form['message'] 
-    return f"Thanks {username}, your message was: {message}" 
+    fname = request.form['fname'] 
+    lname = request.form['lname']
+    msg = request.form['msg'] 
+    return f"Thanks, your name is: {fname} {lname} and you said: {msg}" 
 
 
 if __name__ == "__main__":
