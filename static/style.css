@@ -1,16 +1,18 @@
 #clickMe {
-    color : goldenrod;
-    border-radius:  40%;
+  color: goldenrod;
+  border-radius: 40%;
 }
+
 img {
   border-radius: 50%;
 }
+
 body {
-  background-color: lightblue;
+  background-color: rgba(216, 221, 219, 0.342);
 }
 
 h1 {
-  color: white;
+  color: rgb(44, 42, 42);
   text-align: center;
 }
 
@@ -20,20 +22,20 @@ p {
 }
 
 h2 {
-    color:blueviolet;
-    text-align: center;
+  color: blueviolet;
+  text-align: center;
 }
 
 form {
-    color:crimson;
-    text-align:center;
+  color: crimson;
+  text-align: center;
 }
 
 #t2 {
-    color:black;
-    text-align:center;
+  color: black;
+  text-align: center;
 }
 
 .highlight {
-    background-color: chartreuse;
+  background-color: chartreuse;
 }

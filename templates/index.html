@@ -11,10 +11,42 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Magic Buttons</a>
+            <div class="navbar-collapse">
+
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="#">...</a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="/about">Hey(About)</a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link disabled" href="#">Games</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
     <h1>Hello from Flask!</h1>
     <div style="text-align:center">
         <button id="clickMe">Click me </button><br>
-                    <a class="highlight"
+        <a class="highlight"
             href="https://e3.365dm.com/21/06/1600x900/skynews-monkey-statue-hartlepool_5408900.jpg?20210608110020"
             target="_blank"> Click this button right now.</a><br>
         <a id="t2" href="/about"> Hey </a><br>
@@ -30,15 +62,15 @@
                 </h2>
             </div>
             <div class=" col-7 m-3">
-                    <form action="/submit" method="post">
-                        <label for="fname">First name:</label><br>
-                        <input type="text" id="fname" name="fname" value="Monkey"><br>
-                        <label for="lname">Last name:</label><br>
-                        <input type="text" id="lname" name="lname" value="King"><br>
-                        <label for="message">Message:</label><br>
-                        <input type="text" id="msg" name="msg" value="...">
-                        <input type="submit" value="Submit">
-                    </form>
+                <form action="/submit" method="post">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname" value="Monkey"><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" value="King"><br>
+                    <label for="message">Message:</label><br>
+                    <input type="text" id="msg" name="msg" value="...">
+                    <input type="submit" value="Submit">
+                </form>
             </div>
         </div>
     </div>
