@@ -10,6 +10,10 @@ def home():
 @app.route("/about") 
 def about(): 
      return render_template("about.html") 
+
+@app.route("/place") 
+def place(): 
+     return render_template("place.html") 
  
 @app.route('/submit', methods=["POST"]) 
 
