@@ -1,14 +1,15 @@
-document.getElementById("somePTag").addEventListener("somePTag"), () => {
-    document.getElementById("somePTag").innerHTML = "Other text";
-    alert("no");
-}
+document.getElementById("firstButton").addEventListener("click", () => {
 
-
-
-
-document.getElementById("clickMe").addEventListener("click", () => {
-
-    alert("Hello from JS!");
+    alert("lmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmaolmao");
 
     console.log("This goes to the Console");
+    document.getElementById("somePTag").innerHTML = "Monkey"; 
 }); 
+
+document.getElementById("3").addEventListener("click", () => {
+document.getElementById("3").innerHTML
+=
+"+"+(parseInt(document.getElementById("3").innerHTML)+1)
+
+        console.log("This goes to the Console");
+})
