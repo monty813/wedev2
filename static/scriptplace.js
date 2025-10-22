@@ -44,7 +44,7 @@ addBtn.addEventListener('click', () => {
 
     card.dataset.cardId = counter;
 
-const text123=document.getElementById("textInput").value
+    const text123 = document.getElementById("textInput").value
 
     // the stuff that goes inside the card 
     card.innerHTML = `
@@ -52,37 +52,45 @@ const text123=document.getElementById("textInput").value
  <h5>Card #${counter}</h5> 
 
  <p>${text123}</p> 
-
+<button class="btn btn-outline-primary likeBtn" data-likes="0">❤️ 0</button> 
  <button class="btn btn-danger deleteBtn">Delete</button> 
 
  `;
-// we attach the event listener to the entire document, instead of only a single element. 
+ document.addEventListener('click', (event) => )
+    if (event.target.classList.contains('likeBtn')) {
+    document.getElementById("").innerHTML
+        =
+        "+" + (parseInt(document.getElementById("").innerHTML) + 1)
 
-// also note that there is something in the parentheses. This is an argument for the listener function 
+    console.log("This goes to the Console");
+}})
+    // we attach the event listener to the entire document, instead of only a single element. 
 
-document.addEventListener('click', (event) => { 
+    // also note that there is something in the parentheses. This is an argument for the listener function 
 
- //The event.target is the clicked element 
+    document.addEventListener('click', (event) => {
 
- if (event.target.classList.contains('deleteBtn')) { 
+        //The event.target is the clicked element 
 
- //.closest starts at the given element, and then travels to the root (<body>) of the document while looking for the specified selector (class="card").  
+        if (event.target.classList.contains('deleteBtn')) {
 
- //It either returns the first element it finds, or null, if it finds nothing. Check the screen shot to see the search direction of "closest" for each button. 
+            //.closest starts at the given element, and then travels to the root (<body>) of the document while looking for the specified selector (class="card").  
 
- const card = event.target.closest('.card'); 
+            //It either returns the first element it finds, or null, if it finds nothing. Check the screen shot to see the search direction of "closest" for each button. 
 
- // using dataset to get the id back 
+            const card = event.target.closest('.card');
 
- console.log('Deleting card with ID:', card.dataset.cardId); 
+            // using dataset to get the id back 
 
- //remember, our card sits inside a <div class="col-sm-4">, which is the parent of the card. We remove that div here. 
+            console.log('Deleting card with ID:', card.dataset.cardId);
 
- card.parentElement.remove(); 
+            //remember, our card sits inside a <div class="col-sm-4">, which is the parent of the card. We remove that div here. 
 
- } 
+            card.parentElement.remove();
 
-}); 
+        }
+
+    });
 
     // building the hierarchy of html 
 
