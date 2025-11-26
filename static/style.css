@@ -39,3 +39,17 @@ form {
 .highlight {
   background-color: chartreuse;
 }
+
+.timer-display {
+    display: inline-block;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    border: 2px solid #ffc107;
+    border-radius: 5px;
+    background-color: #fff8dc;
+    color: #d63384;
+    min-width: 40px;
+    text-align: center;
+}
