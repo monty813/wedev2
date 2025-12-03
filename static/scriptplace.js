@@ -88,27 +88,77 @@ if (cardContainer && addBtn) {
 // TIMER PAGE (only runs if button exists)
 // -----------------------------
 const timerBtn = document.getElementById("timerStart");
+
 if (timerBtn) {
-    // Create or get timer display element
+
+    // --- STYLE FOR BOTH BUTTONS ---
+    const styleButton = (btn) => {
+        btn.style.padding = "6px 12px";
+        btn.style.border = "1px solid #444";
+        btn.style.borderRadius = "5px";
+        btn.style.background = "#e6e6e6";
+        btn.style.cursor = "pointer";
+        btn.style.fontSize = "14px";
+        btn.style.marginLeft = "5px";
+    };
+
+    // --- CREATE TIMER DISPLAY BOX ---
     let timerDisplay = document.getElementById("timerDisplay");
     if (!timerDisplay) {
         timerDisplay = document.createElement("span");
         timerDisplay.id = "timerDisplay";
         timerDisplay.style.marginLeft = "10px";
+        timerDisplay.style.padding = "4px 10px";
+        timerDisplay.style.border = "1px solid #444";
+        timerDisplay.style.borderRadius = "5px";
+        timerDisplay.style.background = "#f8f8f8";
+        timerDisplay.style.display = "inline-block";
+        timerDisplay.style.minWidth = "70px";
+        timerDisplay.style.textAlign = "center";
         timerBtn.parentElement.appendChild(timerDisplay);
     }
-    timerDisplay.innerHTML = "0"; // start at 0
+    timerDisplay.innerHTML = "00:00";
+
+    // --- CREATE STOP BUTTON ---
+    let stopBtn = document.getElementById("timerStop");
+    if (!stopBtn) {
+        stopBtn = document.createElement("button");
+        stopBtn.id = "timerStop";
+        stopBtn.textContent = "Stop";
+        timerBtn.parentElement.appendChild(stopBtn);
+    }
+
+    styleButton(timerBtn);
+    styleButton(stopBtn);
 
     let intervalID = -1;
     let timerToBeIncremented = 0;
 
+    const formatTime = (totalSeconds) => {
+        let minutes = Math.floor(totalSeconds / 60)
+            .toString()
+            .padStart(2, "0");
+        let seconds = (totalSeconds % 60)
+            .toString()
+            .padStart(2, "0");
+        return `${minutes}:${seconds}`;
+    };
+
+    // --- START ---
     timerBtn.addEventListener("click", () => {
-        console.log("Timer clicked!");
-        if (intervalID !== -1) return; // prevent multiple intervals
+        if (intervalID !== -1) return;
+
         intervalID = setInterval(() => {
-            timerDisplay.innerHTML = timerToBeIncremented;
-            console.log("Time:", timerToBeIncremented);
-            timerToBeIncremented++
+            timerDisplay.innerHTML = formatTime(timerToBeIncremented);
+            timerToBeIncremented++;
         }, 1000);
+    });
+
+    // --- STOP ---
+    stopBtn.addEventListener("click", () => {
+        if (intervalID !== -1) {
+            clearInterval(intervalID);
+            intervalID = -1;
+        }
     });
 }

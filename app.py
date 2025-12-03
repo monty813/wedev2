@@ -14,6 +14,10 @@ def about():
 @app.route("/place") 
 def place(): 
      return render_template("place.html") 
+
+@app.route("/game")
+def game():
+    return render_template("game.html")
  
 @app.route('/submit', methods=["POST"]) 
 
