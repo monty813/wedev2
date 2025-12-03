@@ -47,12 +47,12 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='game_style.css') }}">
     
     <div class="container my-4">
-        <h2>Memory Game</h2>
+        <h2>Memory Game
+             <button id="generateCards" class="btn btn-success mb-3">Let's Go!</button>
+        <div id="cardContainer" class="row g-3"></div>
+        </h2>
     </div>
-
-<script src="{{ url_for('static', filename='game.js') }}"></script>
-
+ <script src="{{ url_for('static', filename='game.js') }}"></script>
 </body>
 
- <script src="{{ url_for('static', filename='scriptplace.js') }}"></script>
  </html>
