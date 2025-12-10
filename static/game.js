@@ -1,10 +1,9 @@
-const numberOfPairs = 9; 
+const numberOfPairs = 10; 
 let foundPairs = 0;
 let firstCardTurned = null;
 
 let canTurnCards = true;
 
-document.getElementById("generateCards").addEventListener('click', () => {
     let cards = [];
     for (i = 0; i < numberOfPairs; i++) {
         cards.push(i, i);
@@ -14,24 +13,22 @@ document.getElementById("generateCards").addEventListener('click', () => {
     cards.forEach(n => {
         createCard(n);
     });
-});
+
 
 
 document.addEventListener("click", (event) => {
-    if (event.target.closest(".flippable") !== null && canTurnCards) { //check if card is still flippable and if we are not in an animation
-        const card = event.target.closest(".card");
+    const card = event.target.closest(".flippable");
+    if (card !== null && canTurnCards) {
         flipCard(card);
+
         if (firstCardTurned === null) {
             firstCardTurned = card;
-        }
-        else {
+        } else {
             if (firstCardTurned.dataset.number === card.dataset.number) {
-                console.log("hit");
                 foundPairs += 1;
                 firstCardTurned = null;
-            }
-            else {
-                canTurnCards  = false;
+            } else {
+                canTurnCards = false;
                 setTimeout(() => {
                     flipCard(firstCardTurned);
                     flipCard(card);
@@ -53,14 +50,10 @@ function createCard(number) {
     col.className = 'col-sm-2';
 
     const card = document.createElement('div');
-    card.className = 'card flippable p-3 memoryCardBG';
+    card.className = 'flippable memoryCardBG';
     card.dataset.number = number;
-    card.innerHTML = `
-    <img src="/static/monthink.jpg"></img>
-        
-    `;
+    card.innerHTML = `<img src="/static/monthink.jpg">`;
 
-    // building the hierarchy of html
     col.appendChild(card);
     cardContainer.appendChild(col);
 }
@@ -71,7 +64,7 @@ function createCard(number) {
  */
 function flipCard(card) {
     if (card.classList.contains('flippable')) {
-        card.innerHTML = card.dataset.number;
+        card.innerHTML = `<img src="static/${card.dataset.number}.jpg"></img>`;
         card.classList.add("turned");
         card.classList.remove("flippable");
     }

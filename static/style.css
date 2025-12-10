@@ -1,55 +1,213 @@
-#clickMe {
-  color: goldenrod;
-  border-radius: 40%;
-}
-
-img {
-  border-radius: 50%;
-}
-
+/* ================================
+   GENERAL BODY & FONTS
+================================ */
 body {
-  background-color: rgba(216, 221, 219, 0.342);
+    background: linear-gradient(135deg, #f0f4f8, #e6ebf1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-  color: rgb(44, 42, 42);
-  text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
+    text-align: center;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
 }
 
 h2 {
-  color: blueviolet;
-  text-align: center;
+    text-align: center;
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 1.2rem;
+}
+
+/* ================================
+   NAVBAR
+================================ */
+.navbar {
+    background-color: #1f1f1f !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    padding: 0.8rem 1rem;
+}
+
+.navbar .nav-link {
+    color: #f0a500 !important; /* Make links visible by default */
+    font-weight: 500;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.navbar .nav-link:hover {
+    color: #ffffff !important; /* On hover, turn white */
+    transform: scale(1.05);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #f0a500 !important;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.btn {
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+.btn-success {
+    background-color: #27ae60 !important;
+    border-color: #27ae60 !important;
+}
+
+.btn-warning {
+    background-color: #f39c12 !important;
+    border-color: #f39c12 !important;
+}
+
+.btn-primary {
+    background-color: #2980b9 !important;
+    border-color: #2980b9 !important;
+}
+
+/* ================================
+   INPUTS & FORMS
+================================ */
+input[type="text"], input[type="submit"] {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41,128,185,0.3);
 }
 
 form {
-  color: crimson;
-  text-align: center;
+    background: #fdfdfd;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    margin-bottom: 1.5rem;
 }
 
-#t2 {
-  color: black;
-  text-align: center;
+/* ================================
+   CARDS (Memory Game & Place Page)
+================================ */
+.card, .memoryCardBG {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.highlight {
-  background-color: chartreuse;
+.card:hover, .memoryCardBG:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-.timer-display {
+/* Memory game images */
+.memoryCardBG img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================================
+   IMAGES
+================================ */
+img {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ================================
+   LISTS
+================================ */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   LINKS
+================================ */
+a {
+    text-decoration: none;
+    color: #2980b9;
+    transition: color 0.2s, transform 0.2s;
+}
+
+a:hover {
+    color: #f39c12;
+    transform: scale(1.05);
+}
+
+/* ================================
+   SPECIAL ELEMENTS
+================================ */
+#clickMe {
+    color: goldenrod;
+    border-radius: 40%;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.timer-display, #timerDisplay {
     display: inline-block;
     margin-left: 15px;
     font-weight: bold;
     font-size: 1.5rem;
     padding: 5px 15px;
     border: 2px solid #ffc107;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #fff8dc;
     color: #d63384;
-    min-width: 40px;
+    min-width: 70px;
     text-align: center;
+}
+
+/* ================================
+   PARAGRAPHS
+================================ */
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* ================================
+   HIGHLIGHTED ELEMENTS
+================================ */
+.highlight {
+    background-color: #a3e635;
+    color: #1f2937;
+    padding: 3px 6px;
+    border-radius: 5px;
 }

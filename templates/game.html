@@ -43,15 +43,20 @@
         </div>
 
     </nav>
+<div class="container my-5">
+
+    <div class="text-center mb-4">
+        <h1 class="game-title">🧠 Memory Match Game</h1>
+    </div>
+
+    <div id="gameWrapper" class="game-wrapper shadow-sm">
+        <div id="cardContainer" class="row g-3 justify-content-center"></div>
+    </div>
+
+</div>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='game_style.css') }}">
     
-    <div class="container my-4">
-        <h2>Memory Game
-             <button id="generateCards" class="btn btn-success mb-3">Let's Go!</button>
-        <div id="cardContainer" class="row g-3"></div>
-        </h2>
-    </div>
  <script src="{{ url_for('static', filename='game.js') }}"></script>
 </body>
 
