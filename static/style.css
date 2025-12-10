@@ -28,28 +28,46 @@ h2 {
 /* ================================
    NAVBAR
 ================================ */
+
 .navbar {
-    background-color: #1f1f1f !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    padding: 0.8rem 1rem;
+    background-color: #000 !important; /* pure black */
+    box-shadow: none;
+    padding: 0.5rem 1rem;
 }
 
-.navbar .nav-link {
-    color: #f0a500 !important; /* Make links visible by default */
+.navbar-nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0; /* remove spacing between items */
+}
+
+.navbar-nav .nav-link {
+    color: #ad0a0a !important; /* white text */
     font-weight: 500;
-    transition: color 0.2s, transform 0.2s;
+    padding: 0.5rem 1rem; /* minimal padding, no box look */
+    background: none !important; /* remove default background */
+    border-radius: 0; /* remove rounded corners */
 }
 
-.navbar .nav-link:hover {
-    color: #ffffff !important; /* On hover, turn white */
-    transform: scale(1.05);
+.navbar-nav .nav-link:hover {
+    color: #f39c12 !important; /* subtle hover color */
+    background: none !important; /* no background on hover */
+    transform: none;
 }
 
 .navbar-brand {
+    color: #fff !important;
     font-weight: bold;
     font-size: 1.5rem;
-    color: #f0a500 !important;
+    padding: 0;
 }
+
+
 
 /* ================================
    BUTTONS
@@ -71,8 +89,8 @@ h2 {
 }
 
 .btn-warning {
-    background-color: #f39c12 !important;
-    border-color: #f39c12 !important;
+    background-color: #104dbe !important;
+    border-color: #0e35b4 !important;
 }
 
 .btn-primary {
@@ -165,7 +183,7 @@ a {
 }
 
 a:hover {
-    color: #f39c12;
+    color: #1f34aa;
     transform: scale(1.05);
 }
 
@@ -173,7 +191,7 @@ a:hover {
    SPECIAL ELEMENTS
 ================================ */
 #clickMe {
-    color: goldenrod;
+    color: rgb(42, 40, 173);
     border-radius: 40%;
     padding: 6px 12px;
     cursor: pointer;
@@ -185,7 +203,7 @@ a:hover {
     font-weight: bold;
     font-size: 1.5rem;
     padding: 5px 15px;
-    border: 2px solid #ffc107;
+    border: 2px solid #99218f;
     border-radius: 10px;
     background-color: #fff8dc;
     color: #d63384;
