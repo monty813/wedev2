@@ -30,15 +30,16 @@ list = document.getElementById('comment-container');
 
 function displayComment(container, comment) { 
 
- let element = document.createElement('div'); 
+ let element = document.createElement('tr'); 
 
  element.innerHTML = ` 
 
- <li class='comment'> 
 
- ${comment.message} 
 
-</li> 
+<td>${comment.author_name}</td>
+ <td>${comment.message} </td>
+
+
 
 `; 
 
@@ -58,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }); 
 
-document.getElementById('form id')?.addEventListener('submit', (event) => {
+document.getElementById('com')?.addEventListener('submit', (event) => {
         event.preventDefault(); // this prevents the standard action that is taken when certain things happen. 
                                 // Forms automatically send stuff to the server when submitted, and redirect to a new page.
                                 // We don't want that.
 
-        let form = document.getElementById('form id');
+        let form = document.getElementById('com');
         let formData = new FormData(form); 
         const pageName = document.body.dataset.pageName;   
         formData.append('page', pageName)                  // find the form, and transform the data inside of it.
@@ -75,6 +76,9 @@ document.getElementById('form id')?.addEventListener('submit', (event) => {
         .then(data => {
             if (data.status == 'success') {
               console.log(data.message);
+              const pageName = document.body.dataset.pageName; 
+              loadComments(pageName)
+              form.reset()
             }
             else {
               console.error(data.message);

@@ -206,3 +206,7 @@ p {
     padding: 3px 6px;
     border-radius: 5px;
 }
+
+#comment-container td:first-child {
+  padding-right: 40px; /* space between name and comment */
+}

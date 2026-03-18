@@ -42,30 +42,36 @@
 
         <h3>
 
-            Comments
+            Chad reviews
 
         </h3>
 
-        <ul id="comment-container">
-
-            Nothing here yet.
-        </ul>
+        <table>
+            <thead>
+<tr>
+    <th>Name</th>
+    <th>Comments</th>
+</tr>
+</thead>
+<tbody id="comment-container"></tbody>
+        </table>
 
     </div>
 
-<form>
+<form id="com">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">Your comments are here to help.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Add your own comment!</label>
-    <textarea type="text" class="form-control" id="exampleInputPassword1" aria-descrobedby="passwordHelp"></textarea> 
+    <textarea name="message" type="text" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp"></textarea> 
     <div id="passwordHelp" class="form-text"> Be brutally honest and give your real opinion.</div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 
 
     <script src="{{ url_for('static', filename='comment.js') }}"></script>

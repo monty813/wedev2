@@ -79,39 +79,20 @@ def getCOMMENTS():
         'comments': results  # this TODO name is later used in javascript
     })
 
-@app.route("/api/add_comment", methods=['POST'])
-def insertTODO():
-    data = request.form
-    if not data:
-        return jsonify({"status" : "error", "message": "invalid payload"})
-    
-    arg1 = data.get('place')     # change and add more as needed. 
-    arg2 = data.get('name')
-    arg3 = data.get('message')
-    
-    try:
-        instance = conn.cursor()
-        instance.execute('INSERT INTO table_name (column_names) VALUES (%s, %s)', 
-                        (arg1, arg2))
-        conn.commit()
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
-    return jsonify({"status": "success", "message": "Insert successful!"})
-
 @app.route("/api/comments", methods=['POST'])
 def insertCOM():
     data = request.form
     if not data:
         return jsonify({"status" : "error", "message": "invalid payload"})
     
-    arg1 = data.get('place')     # change and add more as needed. 
+    arg1 = data.get('page')     # change and add more as needed. 
     arg2 = data.get('name')
     arg3 = data.get('message')
     
     try:
         instance = conn.cursor()
-        instance.execute('INSERT INTO table_name (column_names) VALUES (%s, %s)', 
-                        (arg1, arg2))
+        instance.execute('INSERT INTO comments (page_name, author_name, message) VALUES (%s, %s, %s)', 
+                        (arg1, arg2, arg3))
         conn.commit()
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)})
