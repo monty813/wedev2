@@ -1,108 +1,64 @@
 
 /* ================================
-   NAVBAR
+   NAVBAR (Vibrant & Playful)
 ================================ */
-
 .navbar {
-    background-color: #000 !important; /* pure black */
-    box-shadow: none;
-    padding: 0.5rem 1rem;
-}
-
-.navbar-nav {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-.navbar-nav .nav-item {
-    margin: 0; /* remove spacing between items */
-}
-
-.navbar-nav .nav-link {
-    color: #ad0a0a !important; /* white text */
-    font-weight: 500;
-    padding: 0.5rem 1rem; /* minimal padding, no box look */
-    background: none !important; /* remove default background */
-    border-radius: 0; /* remove rounded corners */
-}
-
-.navbar-nav .nav-link:hover {
-    color: #f39c12 !important; /* subtle hover color */
-    background: none !important; /* no background on hover */
-    transform: none;
+    background: linear-gradient(90deg, #6c5ce7 0%, #a29bfe 100%) !important;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    padding: 1rem;
+    border-bottom: 3px solid #fdcb6e; 
 }
 
 .navbar-brand {
-    color: #fff !important;
-    font-weight: bold;
-    font-size: 1.5rem;
-    padding: 0;
+    color: #fdcb6e !important; 
+    font-weight: 800;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
 }
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 5px;
+    padding: 8px 15px !important;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    background-color: #fdcb6e !important;
+    color: #2d3436 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
 
 /* ================================
-   LISTS
-================================ */
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-ul li {
-    background: #fff;
-    margin: 5px 0;
-    padding: 8px 12px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-
-
-
-
-
-.memoryCardBG {
-    width: 100%;
-    height: 140px;        /* control card height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;     /* prevent overflow */
-    border-radius: 8px;
-    user-select: none;
-    padding: 0;
-}
-
-.memoryCardBG img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.memoryCardBG img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 0 !important;   /* <-- THIS fixes the oval shape */
-}
-
-/* Page title */
+   GAME SPECIFIC LAYOUT
+=============================== */
 .game-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2c3e50;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #6c5ce7;
+    text-shadow: 3px 3px 0px #ffeaa7;
+    margin-bottom: 1rem;
 }
 
-/* Game wrapper card */
 .game-wrapper {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 25px;
     min-height: 300px;
+    border: 4px solid #a29bfe;
+    box-shadow: 0 15px 35px rgba(108, 92, 231, 0.15);
 }
 
-/* Each card column (fits better on all devices) */
+/* Responsive Grid for Memory Cards */
 .col-sm-2 {
     flex: 0 0 20%;
     max-width: 20%;
@@ -110,8 +66,8 @@ ul li {
 
 @media (max-width: 768px) {
     .col-sm-2 {
-        flex: 0 0 33%;
-        max-width: 33%;
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
     }
 }
 
@@ -122,37 +78,43 @@ ul li {
     }
 }
 
-/* Memory cards */
+/* ================================
+   MEMORY CARDS STYLING
+================================ */
 .memoryCardBG {
     width: 100%;
     height: 150px;
-    background-color: #e9ecef;
-    border-radius: 10px;
+    background-color: #f1f2f6;
+    border-radius: 15px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
-    transition: transform 0.15s ease;
+    cursor: pointer;
+    border: 3px solid #dfe6e9;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .memoryCardBG:hover {
-    transform: scale(1.03);
+    transform: scale(1.05) rotate(2deg);
+    border-color: #6c5ce7;
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.2);
 }
 
-/* Image fills card completely */
 .memoryCardBG img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 0 !important;
+    border-radius: 0 !important; /* Forces the image to fill the card shape */
 }
 
-/* Number side of card */
+/* State when card is flipped over */
 .turned {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #34495e;
-    background: #dfe6e9;
+    background: #ffffff;
+    border-color: #fdcb6e !important;
+    transform: scale(1) !important;
+    box-shadow: 0 0 15px rgba(253, 203, 110, 0.4);
 }

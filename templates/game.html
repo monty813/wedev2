@@ -11,8 +11,7 @@
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand bg-dark">
+    <nav class="navbar navbar-expand bg-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Magic Buttons</a>
             <div class="navbar-collapse">
@@ -21,6 +20,7 @@
                     <li class="nav-item"><a class="nav-link" href="/place">Cards</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/game">Games</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/chat">Live Chat</a></li>
                 </ul>
             </div>
         </div>
@@ -28,17 +28,17 @@
 
     <div class="container my-5">
         <div class="text-center mb-4">
-            <h1 class="game-title">🧠 Memory Match Game</h1>
+            <h1 class="game-title">🧠 Memory Match</h1>
+            <p class="lead text-muted">Find all 10 pairs as fast as you can!</p>
         </div>
 
-        <div id="gameWrapper" class="game-wrapper shadow-sm">
-            <div id="cardContainer" class="row g-3 justify-content-center"></div>
+        <div id="gameWrapper" class="game-wrapper shadow-sm p-4 bg-white rounded-3">
+            <div id="cardContainer" class="row g-3 justify-content-center">
+                </div>
         </div>
     </div>
 
     <script src="static/game.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>

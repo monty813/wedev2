@@ -36,6 +36,10 @@ def place():
 @app.route("/game")
 def game():
     return render_template("game.html")
+
+@app.route("/chat") 
+def chat(): 
+     return render_template("chat.html") 
  
 @app.route('/submit', methods=["POST"]) 
 

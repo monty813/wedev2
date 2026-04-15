@@ -1,3 +1,3 @@
-pip install flask pymysql
+pip install flask pymysql cryptography
 python app.py
 pause
